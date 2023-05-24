@@ -1,0 +1,18 @@
+GET http://localhost:3000/todos/
+###
+
+PUT http://localhost:3000/todos/6/
+Content-Type: application/json
+
+{
+    "todo":"Learing Bootstrap"
+}
+###
+POST http://localhost:3000/todos/
+Content-Type: application/json
+
+{
+    "todo":"Finalize event theme",
+    "priority":"LOW",
+    "status":"TO DO"
+}
