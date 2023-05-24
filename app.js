@@ -99,7 +99,7 @@ app.post("/todos/", async (request, response) => {
   const postTodoQuery = `
     INSERT INTO
         todo(todo,priority,status) VALUES ('${todo}','${priority}','${status}');`;
-  await database.run(postTodoQuery);
+  const data = await database.run(postTodoQuery);
   response.send("Todo Successfully Added");
 });
 
@@ -140,7 +140,7 @@ app.put("/todos/:todoId/", async (request, response) => {
         status='${status}'
     WHERE
         id=${todoId};`;
-  await database.run(putTodoQuery);
+  const data = await database.run(putTodoQuery);
   response.send(`${updateColumn} Updated`);
 });
 
